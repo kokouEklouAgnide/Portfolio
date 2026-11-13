@@ -1,0 +1,17 @@
+services:
+  portfolio:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - ./index.html:/srv/index.html:ro
+      - ./couch-trivia.html:/srv/couch-trivia.html:ro
+      - ./assets:/srv/assets:ro
+      - ./resume.pdf:/srv/resume.pdf:ro
+      - ./homelab.html:/srv/homelab.html:ro
+      - ./network-lab.html:/srv/network-lab.html:ro
+      - ./network-analysis.html:/srv/network-analysis.html:ro
+      - ./metaroce.html:/srv/metaroce.html:ro
+      - ./journal:/srv/journal:ro
